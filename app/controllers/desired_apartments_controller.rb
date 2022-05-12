@@ -1,2 +1,0 @@
-class DesiredApartmentsController < ApplicationController
-end
