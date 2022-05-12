@@ -1,0 +1,2 @@
+class DesiredApartmentsController < ApplicationController
+end
