@@ -1,10 +1,11 @@
 class ApartmentsController < ApplicationController
   def index
-    if current_user.present?
+    @apartment = Apartment.first
+    # if current_user.present?
       #filter based on user prefrences
-    else
-      @apartments = Apartment.all
-    end
+    # else
+      # @apartments = Apartment.all
+    # end
   end
 
   def show
@@ -39,7 +40,7 @@ class ApartmentsController < ApplicationController
   private
 
   def apartment_params
-    params.require(:apartment).permit(:title, :photo, :description, :room, :area, :rent)
+    params.require(:apartment).permit(:title, :photo[], :description, :room, :area, :rent)
   end
 
 end

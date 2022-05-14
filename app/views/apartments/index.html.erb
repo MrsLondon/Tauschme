@@ -1,21 +1,40 @@
-<div class="container-apartment">
-  <div class="cards">
-    <% @apartments.each do |apartment| %>
-      <div class="card-product">
-          <%= link_to apartment_path(apartment), class: "text-decoration-none" do %>
-            <% if apartment.photo.attached?  %>
-              <%= cl_image_tag apartment.photo.key, height: 300, width: 400, crop: :fill, class:"new-card-img-top" %>
-            <% end %>
-          <% end %>
-        <div class= "grid">
-        <div class="index-card-body">
-          <h1 class="index-card-title"><%= apartment.title.capitalize %></h1>
-           <%= apartment.description %>
-        </div>
-        </div>
-        </div>
-        <% end %>
-        </div>
-      </div>
+
+<div class="container-show">
+<div class="cards">
+<h1><%= @apartment.title %></h1>
+<%= @apartment.rent %>
+<%= @apartment.room %>
+<% @apartment.photos.each do |photo| %>
+<%= cl_image_tag(photo.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+<% end %>
+<p><%= @apartment.area %></p>
+<h2><%= @apartment.description %></h2>
+</div>
+</div>
+
+<!-- Slider main container -->
+<div data-controller="carousel" class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
   </div>
+</div>
+
+<div data-controller="carousel" class="swiper-container w-25 my-5"
+    data-carousel-options-value='{
+    "pagination": { "el": ".swiper-pagination",
+                    "dynamicBullets": "true" },
+    "navigation": { "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"}}'>
+  ...
+  <!-- Pagination (... or 1/10 or progress bar) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Navigation buttons (< >) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
