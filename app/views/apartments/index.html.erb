@@ -1,0 +1,21 @@
+<div class="container-apartment">
+  <div class="cards">
+    <% @apartments.each do |apartment| %>
+      <div class="card-product">
+          <%= link_to apartment_path(apartment), class: "text-decoration-none" do %>
+            <% if apartment.photo.attached?  %>
+              <%= cl_image_tag apartment.photo.key, height: 300, width: 400, crop: :fill, class:"new-card-img-top" %>
+            <% end %>
+          <% end %>
+        <div class= "grid">
+        <div class="index-card-body">
+          <h1 class="index-card-title"><%= apartment.title.capitalize %></h1>
+           <%= apartment.description %>
+        </div>
+        </div>
+        </div>
+        <% end %>
+        </div>
+      </div>
+  </div>
+</div>
