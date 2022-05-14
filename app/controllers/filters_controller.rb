@@ -45,7 +45,7 @@ class FiltersController < ApplicationController
   private
 
   def filter_params
-    params.require(:filter).permit(:size, :description, :room, :address, :rent)
+    params.require(:filter).permit(:room, :area, :rent)
   end
 
   def set_filter
