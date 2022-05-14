@@ -1,14 +1,29 @@
 class ApartmentsController < ApplicationController
   def index
-    @apartments = Apartment.all
+    if current_user.present?
+      #filter based on user prefrences
+    else
+      @apartments = Apartment.all
+    end
   end
 
   def show
     @apartment = Apartment.find(params[:id])
   end
 
+  def edit
+  end
+
   def new
     @apartment = Apartment.new
+  end
+
+  def update
+    if @apartment.update(apartment_params)
+      redirect_to @apartment, notice: 'Your apartment was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def create
@@ -24,7 +39,7 @@ class ApartmentsController < ApplicationController
   private
 
   def apartment_params
-    params.require(:apartment).permit(:photo, :description, :room, :address, :rent, :size)
+    params.require(:apartment).permit(:title, :photo, :description, :room, :address, :rent, :size)
   end
 
 end
