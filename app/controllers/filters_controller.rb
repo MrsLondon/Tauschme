@@ -23,7 +23,7 @@ class FiltersController < ApplicationController
     @user.user = @current_user
     @filter.user = @user
     if @filter.save
-      redirect_to @filter, notice: 'appartment was successfully created.'
+      redirect_to @filter
     else
       render :new
     end
@@ -31,7 +31,7 @@ class FiltersController < ApplicationController
 
   def update
     if @filter.update(filter_params)
-      redirect_to @filter, notice: 'your apartment was successfully updated.'
+      redirect_to @filter, notice: 'Your criteria was successfully updated.'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class FiltersController < ApplicationController
 
   def destroy
     @filter.destroy
-    redirect_to apartment_path, notice: 'your apartment was successfully deleted.'
+    redirect_to apartment_path
   end
 
   private
