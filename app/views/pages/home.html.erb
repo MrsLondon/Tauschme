@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/navbar' %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2760&q=80);">
+  <div class="structure">
+    <h1>Trade <strong>your apartment</strong> not <strong>your sanity</strong>!</h1>
+    <div class="flex-item">
+      <%= link_to "join", new_user_registration_path, class: "btn btn-flat" %>
+      <%= link_to "Sign in", new_user_session_url, class: "btn btn-ghost" %>
+    </div>
+  </div>
+</div>
