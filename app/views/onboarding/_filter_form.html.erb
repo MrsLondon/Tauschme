@@ -1,0 +1,43 @@
+<div class="col-lg-6 bg-indigo text-white">
+  <div class="p-5">
+    <h3 class="fw-normal mb-5">I want</h3>
+
+    <div class="mb-4 pb-2">
+      <div class="form-outline form-white">
+        <%= onboarding_form.text_field "filter[area]", class: "form-control form-control-lg" %>
+        <label class="form-label" for="form3Examplea2">Area</label>
+      </div>
+    </div>
+
+    <div class="mb-4 pb-2">
+      <div class="form-outline form-white">
+        <%= onboarding_form.text_field "apartment[room]", class: "form-control form-control-lg" %>
+        <label class="form-label" for="form3Examplea3">Room</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 mb-4 pb-2">
+
+        <div class="form-outline form-white">
+          <%= onboarding_form.text_field "apartment[rent]", class: "form-control form-control-lg" %>
+          <label class="form-label" for="form3Examplea4">Rent</label>
+        </div>
+
+      </div>
+
+    <div class="row">
+      <div class="col-md-5 mb-4 pb-2">
+    <div class="form-check d-flex justify-content-start mb-4 pb-3">
+      <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
+      <label class="form-check-label text-white" for="form2Example3">
+        I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your
+        site.
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-light btn-lg"
+      data-mdb-ripple-color="dark">Register</button>
+
+  </div>
+</div>
