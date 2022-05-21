@@ -1,6 +1,131 @@
-<% @apartments.each do |apartment| %>
-<h1><%= apartment.rent %></h1>
-<h1><%= apartment.room %></h1>
-<h1><%= apartment.area %></h1>
-<h1><%= apartment.description %></h1>
-<% end %>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
+     <script src="https://kit.fontawesome.com/2c7fc28a2f.js"></script>
+  </head>
+  <body>
+    <div id="container">
+
+      <div id="galleryView">
+        <div id="galleryContainer">
+
+           <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-3x"></i></button>
+           <a id="linkTag">
+              <div id="mainView"></div>
+           </a>
+
+           <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-3x"></i></button>
+        </div>
+      </div>
+
+      document.getElementById("outer3").addEventListener("click", toggleState3);
+    </div>
+      <script>
+      function toggleState3() {
+  let galleryView = document.getElementById("galleryView")
+  let tilesView = document.getElementById("tilesView")
+  let outer = document.getElementById("outer3");
+  let slider = document.getElementById("slider3");
+  let tilesContainer = document.getElementById("tilesContainer");
+  if (slider.classList.contains("active")) {
+    slider.classList.remove("active");
+    outer.classList.remove("outerActive");
+    galleryView.style.display = "flex";
+    tilesView.style.display = "none";
+
+    while (tilesContainer.hasChildNodes()) {
+      tilesContainer.removeChild(tilesContainer.firstChild)
+      }
+  } else {
+    slider.classList.add("active");
+    outer.classList.add("outerActive");
+    galleryView.style.display = "none";
+    tilesView.style.display = "flex";
+
+    for (let i = 0; i < imgObject.length - 1; i++) {
+      let tileItem = document.createElement("div");
+      tileItem.classList.add("tileItem");
+      tileItem.style.background =  "url(" + imgObject[i] + ")";
+      tileItem.style.backgroundSize = "contain";
+      tilesContainer.appendChild(tileItem);
+    }
+  };
+}
+
+let imgObject = [
+  "https://assets.website-files.com/60bf7d986cfd0a5be874b435/60bf7d986cfd0a2bc774b7af_wohnzimmer-spirit-of-berlin-rent-beazy-film-location.jpg",
+  "https://assets.website-files.com/60bf7d986cfd0a5be874b435/60bf7d986cfd0abbfd74b7c8_scandi-minimal-beazy-film-location-3.png",
+  "https://i.pinimg.com/originals/10/fd/22/10fd22a8f87bed68ec8e1f5c668ad8dc.jpg",
+  "https://placeimg.com/450/450/nature",
+  "https://placeimg.com/450/450/people",
+  "https://placeimg.com/450/450/tech",
+  "https://picsum.photos/id/1/450/450",
+  "https://picsum.photos/id/8/450/450",
+  "https://picsum.photos/id/12/450/450",
+  "https://picsum.photos/id/15/450/450",
+  "https://picsum.photos/id/5/450/450",
+];
+
+let mainImg = 0;
+let prevImg = imgObject.length - 1;
+let nextImg = 1;
+
+function loadGallery() {
+
+  let mainView = document.getElementById("mainView");
+  mainView.style.background = "url(" + imgObject[mainImg] + ")";
+
+  let leftView = document.getElementById("leftView");
+  leftView.style.background = "url(" + imgObject[prevImg] + ")";
+
+  let rightView = document.getElementById("rightView");
+  rightView.style.background = "url(" + imgObject[nextImg] + ")";
+
+  let linkTag = document.getElementById("linkTag")
+  linkTag.href = imgObject[mainImg];
+
+};
+
+function scrollRight() {
+
+  prevImg = mainImg;
+  mainImg = nextImg;
+  if (nextImg >= (imgObject.length -1)) {
+    nextImg = 0;
+  } else {
+    nextImg++;
+  };
+  loadGallery();
+};
+
+function scrollLeft() {
+  nextImg = mainImg
+  mainImg = prevImg;
+
+  if (prevImg === 0) {
+    prevImg = imgObject.length - 1;
+  } else {
+    prevImg--;
+  };
+  loadGallery();
+};
+
+document.getElementById("navRight").addEventListener("click", scrollRight);
+document.getElementById("navLeft").addEventListener("click", scrollLeft);
+document.getElementById("rightView").addEventListener("click", scrollRight);
+document.getElementById("leftView").addEventListener("click", scrollLeft);
+document.addEventListener('keyup',function(e){
+    if (e.keyCode === 37) {
+    scrollLeft();
+  } else if(e.keyCode === 39) {
+    scrollRight();
+  }
+});
+
+loadGallery();
+</script>
+  </body>
+</html>
