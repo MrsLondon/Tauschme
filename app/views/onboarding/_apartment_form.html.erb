@@ -2,6 +2,7 @@
   <div class="p-5">
     <h3 class="fw-normal mb-5" style="color: #4835d4;">I have</h3>
 
+
         <div class="mb-4 pb-2">
       <div class="form-outline form-white">
         <%= onboarding_form.text_field "apartment[area]", class: "form-control form-control-lg" %>
@@ -15,6 +16,15 @@
         <label class="form-label" for="form3Examplea3">Room</label>
       </div>
     </div>
+
+    <div class="mb-4 pb-2">
+      <div class="form-outline form-white">
+         <%= onboarding_form.file_field "apartment[photo]", class: "form-control form-control-lg"  %>
+        <label class="form-label" for="form3Examplea4">photo</label>
+      </div>
+    </div>
+    <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%#= f.file_field :pictures, multiple: true %>
 
     <div class="row">
       <div class="col-md-5 mb-4 pb-2">
