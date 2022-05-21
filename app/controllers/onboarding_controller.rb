@@ -6,23 +6,26 @@ class OnboardingController < ApplicationController
   end
 
   def create
-    @apartment = Apartment.new(
-      #image: params["apartment"]["area"],
-      area: params["apartment"]["area"],
-      room: params["apartment"]["room"],
-      rent: params["apartment"]["rent"],
-      description: params["apartment"]["description"],
-      photos: params["apartment"]["photos"]
-    )
+    @apartment = Apartment.new(apartment_params)
     @apartment.user = current_user
-    @apartment.save
 
-    @filter = Filter.new(
-      area: params["filter"]["area"],
-      room: params["filter"]["room"],
-      rent: params["filter"]["rent"],
-    )
+    @filter = Filter.new(filter_params)
     @filter.user = current_user
-    @filter.save
+
+    if @apartment.save && @filter.save
+      redirect_to apartments_path
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def apartment_params
+    params.require(:apartment).permit(:area, { photo: [] }, :description, :room, :area, :rent)
+  end
+
+  def filter_params
+    params.require(:filter).permit(:room, :area, :rent)
   end
 end
