@@ -2,6 +2,8 @@ class ApartmentsController < ApplicationController
   def index
     @apartment = Apartment.first
     @apartments = Apartment.all
+    @test = current_user.filter
+    raise
     # if current_user.present?
       #filter based on user prefrences
     # else

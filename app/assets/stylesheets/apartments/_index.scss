@@ -218,3 +218,60 @@
   z-index: 1;
   box-sizing: border-box;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 0px 10px 10px 10px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.index-card {
+  border-radius: 5%;
+}
+
+.index-card-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.index-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.index-card-text {
+  font-size: 14px;
+}
+
+.new-card {
+  border-color: #3FABAA;
+  border-radius: 10%;
+}
+
+.new-card img {
+  border-color: #3FABAA;
+  width: 100%;
+  height: 100%;
+}
+
+.new-card-img-top {
+  border-radius: 10%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
