@@ -12,6 +12,7 @@ class OnboardingController < ApplicationController
       room: params["apartment"]["room"],
       rent: params["apartment"]["rent"],
       description: params["apartment"]["description"],
+      photos: params["apartment"]["photos"]
     )
     @apartment.user = current_user
     @apartment.save
