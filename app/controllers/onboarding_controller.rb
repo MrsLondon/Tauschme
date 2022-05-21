@@ -12,6 +12,7 @@ class OnboardingController < ApplicationController
     @filter = Filter.new(filter_params)
     @filter.user = current_user
 
+
     if @apartment.save && @filter.save
       redirect_to apartments_path
     else

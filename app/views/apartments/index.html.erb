@@ -14,7 +14,25 @@
 
            <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-3x"></i></button>
            <a id="linkTag">
-              <div id="mainView"></div>
+           <div id="mainView">
+          <% @apartments.each do |apartment| %>
+          <div class="card-product">
+          <%= link_to apartment_path(apartment), class: "index-card-text" do %>
+          <% if apartment.photos.attached?  %>
+         <%= cl_image_tag apartment.photos, height: 300, width: 400, crop: :fill, class:"new-card-img-top" %>
+         <h1><% apartment.area %></h1>
+         <% apartment.rent %>
+         <% end %>
+         <% end %>
+         <div class= "grid">
+         <div class="index-card-body">
+          <%= apartment.description %>
+          <h1 class="index-card-title"><%= apartment.title %></h1>
+        </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
            </a>
 
            <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-3x"></i></button>
