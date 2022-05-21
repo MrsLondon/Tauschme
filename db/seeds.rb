@@ -27,7 +27,7 @@ apartment_title = ["Sunny apartment in Berlin", "Altbau", "Neubau", "Apartment"]
 
 apartment_room = [3, 5, 2, 1]
 
-puts 'creating apartments'
+puts 'Creating apartments'
 
 user = User.new(
   email: "email@email.com",
