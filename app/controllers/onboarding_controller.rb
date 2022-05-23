@@ -23,7 +23,7 @@ class OnboardingController < ApplicationController
   private
 
   def apartment_params
-    params.require(:apartment).permit(:area, { photo: [] }, :description, :room, :area, :rent)
+    params.require(:apartment).permit(:title, { photo: [] }, :description, :room, :area, :rent)
   end
 
   def filter_params
