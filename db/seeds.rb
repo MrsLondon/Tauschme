@@ -9,6 +9,7 @@ require 'open-uri'
 require 'json'
 
 puts "Cleaning up database..."
+Filter.destroy_all
 User.destroy_all
 Apartment.destroy_all
 puts "Database cleaned"
@@ -27,7 +28,7 @@ apartment_title = ["Sunny apartment in Berlin", "Altbau", "Neubau", "Apartment"]
 
 apartment_room = [3, 5, 2, 1]
 
-puts 'Creating apartments'
+puts 'Creating users'
 
 user = User.new(
   email: "email@email.com",
@@ -35,13 +36,44 @@ user = User.new(
 )
 user.save!
 
+user_two = User.new(
+  email: "usertwo@email.com",
+  password: "123456"
+)
+user_two.save!
+
+puts 'Creating filters'
+
+filter_one = Filter.new(
+  rent: 300,
+  area: "Kreuzberg",
+  room: 3
+)
+
+filter_one.user = user
+filter_one.save!
+
+filter_two = Filter.new(
+  rent: 400,
+  area: "Mitte",
+  room: 2
+)
+
+filter_two.user = user_two
+filter_two.save!
+
+puts 'creating apartments'
+
 apartment1 = Apartment.new(
   description: apartment_descriptions.sample,
   user_id: user.id,
-  area: apartment_area.sample,
-  rent: apartment_rent.sample,
+  #area: apartment_area.sample,
+  area: 'Mitte',
+  #rent: apartment_rent.sample,
+  rent: 400,
   title: apartment_title.sample,
-  room: apartment_room.sample
+  #room: apartment_room.sample,
+  room: 2
 )
 
 file = URI.open("https://images.unsplash.com/photo-1550609531-57c783bb03e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
