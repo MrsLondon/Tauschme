@@ -3,10 +3,11 @@ class ApartmentsController < ApplicationController
     if current_user.present?
       @filter = current_user.filter
       # filter based on user preferences
-      @apartments = Apartment
-        .where(area: @filter.area)
-        .and(Apartment.where(room: @filter.room))
-        .and(Apartment.where(rent: @filter.rent))
+      @apartments = Apartment.all
+
+        # .where(area: @filter.area)
+        # .and(Apartment.where(room: @filter.room))
+        # .and(Apartment.where(rent: @filter.rent))
     else
       @apartments = Apartment.all
     end

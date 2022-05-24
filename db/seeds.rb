@@ -67,13 +67,13 @@ puts 'creating apartments'
 apartment1 = Apartment.new(
   description: apartment_descriptions.sample,
   user_id: user.id,
-  #area: apartment_area.sample,
-  area: 'Mitte',
-  #rent: apartment_rent.sample,
-  rent: 400,
+  area: apartment_area.sample,
+
+  rent: apartment_rent.sample,
+
   title: apartment_title.sample,
-  #room: apartment_room.sample,
-  room: 2
+  room: apartment_room.sample,
+
 )
 
 file = URI.open("https://images.unsplash.com/photo-1550609531-57c783bb03e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
