@@ -1,14 +1,15 @@
 class ApartmentsController < ApplicationController
   def index
-    @apartment = Apartment.first
-    @apartments = Apartment.all
-    @test = current_user.filter
-    raise
-    # if current_user.present?
-      #filter based on user prefrences
-    # else
-      # @apartments = Apartment.all
-    # end
+    if current_user.present?
+      @filter = current_user.filter
+      # filter based on user preferences
+      @apartments = Apartment
+        .where(area: @filter.area)
+        .and(Apartment.where(room: @filter.room))
+        .and(Apartment.where(rent: @filter.rent))
+    else
+      @apartments = Apartment.all
+    end
   end
 
   def show
