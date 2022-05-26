@@ -1,0 +1,51 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <h1 class="navbar-header"><%= image_tag "favicon3.png" %>TauschMe</h1>
+
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+
+          <li class="nav-item active">
+            <%= link_to "Matches", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Home", "#", class: "nav-link" %>
+          </li>
+        <% if user_signed_in? %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+
+            </div>
+          </li>
+        <%else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="card-trip">
+  <img src="https://i.guim.co.uk/img/media/a6849dbe08311fff08f5e3172ddeb74ea8972fef/0_941_8256_4954/master/8256.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=8c700356f03e6018ce24e039eb2ac849" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Sunny apartment in the heart of Marzahn</h2>
+      <p>We cant believe how nice it is!</p>
+    </div>
+    <h2 class="card-trip-pricing">€699.99/month</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
