@@ -1,23 +1,33 @@
 // Specific CSS for your home-page
+.navbar-header {
+  margin: 0;
+}
+
+.navbar {
+  padding: 0;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
   padding: 300px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .banner h1 {
   margin: 0;
-  color: #F8F6EF;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  color: rgb(0, 0, 0);;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 24px;
   font-weight: bold;
 }
 
 .banner p {
   font-size: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
   opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .structure {
@@ -25,10 +35,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(248,246,239, 0.7);
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .btn-flat {
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 8px 24px;
   border-radius: 4px;
   background: #A1BE97;
@@ -36,7 +49,7 @@
 }
 
 .btn-ghost {
-  color: white;
+  color: rgb(0, 0, 0);;
   padding: 8px 24px;
   border-radius: 4px;
   background: #A1BE97;

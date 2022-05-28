@@ -32,14 +32,15 @@
   min-height: 60vh;
   min-height: fit-content;
   margin: 0 auto;
+
   .apartment-info {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   .apartment-picture {
-    width: 55%;
+    width: 50%;
   }
   img {
     width: 100%;
@@ -48,16 +49,19 @@
   }
 }
 
-.carousel-control-next {
-  i {
-   fill: red !important;
-}
-}
-
-#like {
-  color: red;
+.likebutton {
+  display: flex;
+  justify-content: center;
+  transform: translate(0px, -29px);
 }
 
-#dislike {
-  color: red !important;
+// .carousel-control-next {
+//   i {
+//    fill: red !important;
+// }
+// }
+
+#like, #dislike {
+  background-color: transparent;
+  border: none;
 }
