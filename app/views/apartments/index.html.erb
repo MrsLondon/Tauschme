@@ -22,7 +22,7 @@
             <%= image_tag(index == 0 ? "https://image.capital.de/31033562/t/4_/v1/w1440/r0/-/altbauwohnung-dpa-82442803-jpg.jpg" : index == 1 ? "https://www.relocatemagazine.com/media/images/Scarpa-16_14791_t5.jpg" : "https://previews.123rf.com/images/hafizwira/hafizwira1602/hafizwira160200043/55125947-%EB%82%A8%EC%9D%B4%EC%84%AC%EC%9D%98-%EC%95%84%EC%A3%BC-%EC%9E%91%EC%9D%80-%EC%98%A4%EB%91%90%EB%A7%89%EC%A7%91-.jpg") %>
           </div>
         </div>
-        <button id="dislike" class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button id="dislike" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
           <i class="fas fa-times fa-3x"></i>
           <%= link_to 'Dislike', status_index_path(status:{disliked: true, apartment_id: apartment.id}), method: :post %>
           <span class="visually-hidden">Previous</span>
