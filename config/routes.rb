@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post "/onboarding", to: "onboarding#create"
 
   devise_for :users, controllers: { registrations: "registrations" }
+
+  resources :status, only:[:new, :create]
 end
