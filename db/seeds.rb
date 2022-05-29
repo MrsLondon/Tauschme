@@ -22,13 +22,13 @@ apartment_descriptions = [
   "You'll love eating burgers in this stunning apartment"
 ]
 
-apartment_area = ["Neukolln", "Kreuzberg", "Mitte", "Wedding", "Pankow"]
+# apartment_area = ["Neukolln", "Kreuzberg", "Mitte", "Wedding", "Pankow"]
 
-apartment_rent = [300, 400, 500, 100, 1000]
+apartment_rent = [300, 400, 500, 100, 600]
 
 apartment_title = ["Sunny apartment in Berlin", "Altbau", "Neubau", "Groovy Apartment", "Your new home", "Make me your new home", "My wife left me, please exchange!!", "No more kids at home, need to downsize", "My dog needs a backyar"]
 
-apartment_room = [3, 5, 2, 1, 10]
+# apartment_room = [3, 3, 3, 3, 3]
 
 file = URI.open("https://images.unsplash.com/photo-1550609531-57c783bb03e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
 
@@ -49,13 +49,13 @@ file = URI.open("https://images.unsplash.com/photo-1550609531-57c783bb03e8?ixlib
   puts 'creating apartments'
   apartment = Apartment.new(
     description: apartment_descriptions.sample,
-    area: apartment_area.sample,
+    area: "Kreuzberg",
     rent: apartment_rent.sample,
     title: apartment_title.sample,
-    room: apartment_room.sample
+    room: 3
   )
 
   apartment.user = User.all.sample
+  apartment.photos.attach(io: file, filename: file, content_type: "image/jpg")
   apartment.save!
   end
-  Apartment.last.photos.attach(io: file, filename: file, content_type: "image/jpg")
