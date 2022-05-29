@@ -92,52 +92,5 @@ end
 
   puts 'associating apartment and image'
   apartment[:img_file_names].each do |img_file|
-    seed_offer.photos.attach(io: File.open("app/assets/images/#{img_file}"), content_type: 'image/jpg')
+    seed_apartment.photos.attach(io: File.open("app/assets/images/#{img_file}"), content_type: 'image/jpg')
   end
-
-
-# apartment_descriptions = [
-#   "Sunny apartment in Kreuzberg with balcony!",
-#   "Quaint 1 room apartment near the canal",
-#   "Penthouse apartment overlooking beautiful Hermannplatz",
-#   "Bright rooms, big kitchen, grass in the backyard",
-#   "You'll love eating burgers in this stunning apartment"
-# ]
-
-# # apartment_area = ["Neukolln", "Kreuzberg", "Mitte", "Wedding", "Pankow"]
-
-# apartment_title = [300, 400, 500, 100, 600]
-
-# apartment_title = ["Sunny apartment in Berlin", "Altbau", "Neubau", "Groovy Apartment", "Your new home", "Make me your new home", "My wife left me, please exchange!!", "No more kids at home, need to downsize", "My dog needs a backyar"]
-
-# # apartment_room = [3, 3, 3, 3, 3]
-
-# file = URI.open("https://images.unsplash.com/photo-1550609531-57c783bb03e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
-
-#   puts 'creating users'
-#   user = User.new(
-#     email: "email@email.com",
-#     password: "123456"
-#   )
-#   user.save!
-
-#   user_two = User.new(
-#     email: "usertwo@email.com",
-#     password: "123456"
-#   )
-#   user_two.save!
-
-#   5.times do
-#   puts 'creating apartments'
-#   apartment = Apartment.new(
-#     description: apartment_descriptions.sample,
-#     area: "Kreuzberg",
-#     rent: apartment_rent.sample,
-#     title: apartment_title.sample,
-#     room: 3
-#   )
-
-#   apartment.user = User.all.sample
-#   apartment.photos.attach(io: file, filename: file, content_type: "image/jpg")
-#   apartment.save!
-#   end
