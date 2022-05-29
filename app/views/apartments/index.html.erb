@@ -21,7 +21,9 @@
           <div class="apartment-picture">
 
             <% apartment.photos.each do |photo| %>
-            <%= image_tag(photo) %>
+              <% if photo %>
+              <%= cl_image_tag photo.key %>
+              <% end %>
             <% end %>
 
           </div>
