@@ -14,7 +14,7 @@ User.destroy_all
 Apartment.destroy_all
 puts "Database cleaned"
 
-aprtments = [
+apartments = [
   {
   title: "Sunny apartment in Berlin",
   area: "kreuzberg",
