@@ -5,10 +5,15 @@ Rails.application.routes.draw do
   resources :apartments do
     :filters
   end
+
   get "/onboarding", to: "onboarding#new"
   post "/onboarding", to: "onboarding#create"
 
   devise_for :users, controllers: { registrations: "registrations" }
 
   resources :statuses, only:[:new, :create]
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
