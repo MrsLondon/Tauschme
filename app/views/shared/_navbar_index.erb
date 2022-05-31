@@ -1,9 +1,12 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
+
     <h1 class="navbar-header"><%= image_tag "favicon3.png" %>TauschMe</h1>
 
     <% end %>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,13 +21,12 @@
           <li class="nav-item">
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
-        <% if user_signed_in? %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+       <% if user_signed_in? %>
+        <%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
-
             </div>
           </li>
         <%else %>

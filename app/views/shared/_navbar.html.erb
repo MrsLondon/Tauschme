@@ -19,12 +19,11 @@
             <%= link_to "Press", "#", class: "nav-link" %>
           </li>
         <% if user_signed_in? %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+        <%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
-
             </div>
           </li>
         <%else %>
