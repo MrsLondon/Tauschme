@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
 
-  resources :status, only:[:new, :create]
+  resources :statuses, only:[:new, :create]
 end

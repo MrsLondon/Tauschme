@@ -8,11 +8,11 @@
 require 'open-uri'
 require 'json'
 
-puts "Cleaning up database..."
-Filter.destroy_all
-User.destroy_all
-Apartment.destroy_all
-puts "Database cleaned"
+# puts "Cleaning up database..."
+# Filter.destroy_all
+# User.destroy_all
+# Apartment.destroy_all
+# puts "Database cleaned"
 
 apartments = [
   {
@@ -53,7 +53,7 @@ apartments = [
     area: "mitte",
     rent: 900,
     room: 2,
-    img_file_names: ['apartment5.webp'],
+    img_file_names: ['apartment5.jpeg'],
     user_one: {
       email: 'sam@gmail.com',
       password: '123456'
@@ -80,20 +80,23 @@ apartments.each_with_index do |apartment, index|
     password: apartment[:user_one][:password]
   )
   seed_user.save!
-end
 
   puts 'creating apartments'
-  seed_apartment = apartment.new(
+  seed_apartment = Apartment.new(
     title: apartment[:title],
     area: apartment[:area],
     rent: apartment[:rent],
     room: apartment[:room]
   )
+  seed_apartment.user = seed_user
+  seed_apartment.save
 
   puts 'associating apartment and image'
   apartment[:img_file_names].each do |img_file|
-    seed_apartment.photos.attach(io: File.open("app/assets/images/#{img_file}"), content_type: 'image/jpg')
+    seed_apartment.photos.attach(io: File.open("app/assets/images/#{img_file}"), content_type: 'image/jpg', filename: "#{seed_apartment.id}")
   end
+end
+
 
 
 # apartment_descriptions = [

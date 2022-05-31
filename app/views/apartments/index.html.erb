@@ -38,13 +38,13 @@
         </div>
          <div class="likebutton">
           <button id="dislike"  type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <%= link_to status_index_path(status:{disliked: true, apartment_id: apartment.id}), method: :post do %>
+          <%= link_to statuses_path(status:{disliked: true, apartment_id: apartment.id}), method: :post do %>
           <i class="fa-solid fa-circle-xmark fa-3x"></i>
           <% end %>
           <span class="visually-hidden">Previous</span>
         </button>
         <button id="like"  type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <%= link_to status_index_path(status:{liked: true, apartment_id: apartment.id}), method: :post do %>
+          <%= link_to statuses_path(user: apartment.user), method: :post do %>
           <i class="fa-solid fa-circle-check fa-3x"></i>
           <% end %>
           <span class="visually-hidden">Next</span>

@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :apartments, dependent: :destroy
   has_one :filter, dependent: :destroy
+  has_many :statuses, dependent: :destroy
 end
