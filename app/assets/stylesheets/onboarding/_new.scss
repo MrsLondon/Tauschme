@@ -32,3 +32,25 @@
   border-bottom-right-radius: 15px;
   }
   }
+
+  .btn-light:hover {
+    background: #8fb682;
+    color: white;
+  }
+
+  .btn-light {
+    background-color: #A1BE97;
+    padding: 15px 45px;
+    position: absolute;
+
+  }
+
+  head {
+   position: relative;
+  }
+
+  title {
+    position: absolute;
+    top: 80px;
+    right: 0;
+  }
