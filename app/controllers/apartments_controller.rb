@@ -1,16 +1,19 @@
 class ApartmentsController < ApplicationController
   def index
-    if current_user.present?
-      @filter = current_user.filter
-      # filter based on user preferences
-      @apartments = [Apartment.last]
+    @apartments = Apartment.all.reject { |apartment| apartment.user_id == current_user.id }
 
-        # .where(area: @filter.area)
-        # .and(Apartment.where(room: @filter.room))
-        # .and(Apartment.where(rent: @filter.rent))
-    else
-      @apartments = Apartment.all
-    end
+    # if current_user.present?
+    #   @filter = current_user.filter
+
+    #   @apartments = [Apartment.last]
+
+    #   @apartments = Apartment.where(area: @filter.area)
+    #   .and(Apartment.where(room: @filter.room))
+    #   .and(Apartment.where(rent: @filter.rent))
+
+    # else
+    #   @apartments = Apartment.all
+    # end
   end
 
   def show
