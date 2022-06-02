@@ -12,7 +12,7 @@
      <div class="carousel-item <%= "active" if apartment == @apartments.first %>">
         <%= link_to apartment_path(apartment) do %>
         <div class="carousel-card">
-          <div class="d-flex">
+          <div class="d-flex" style="height: 100%;" >
           <div class="apartment-info">
             <div>
 
@@ -27,11 +27,11 @@
           </div>
           <div class="apartment-picture">
 
-            <% apartment.photos.each do |photo| %>
-              <% if photo %>
-              <%= cl_image_tag photo.key %>
+
+              <% if apartment.photos.attached? %>
+              <%= cl_image_tag apartment.photos.last.key %>
               <% end %>
-            <% end %>
+
 
           </div>
           </div>

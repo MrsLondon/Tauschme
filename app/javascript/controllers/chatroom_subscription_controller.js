@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-import consumer from '../chanels/consumer'
+import consumer from '../channels/consumer'
 export default class extends Controller {
   connect() {
     this.channel = consumer.subscriptions.create(
