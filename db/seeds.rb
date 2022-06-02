@@ -17,9 +17,9 @@ require 'json'
 apartments = [
   {
   title: "Sunny apartment in Berlin",
-  area: "kreuzberg",
+  area: "Kreuzberg",
   rent: 700,
-  room: 2,
+  room: 3,
   img_file_names: ['apartment1.jpeg'],
   user_one: {
     email: 'emma@gmail.com',
@@ -27,10 +27,10 @@ apartments = [
   }
   },
   {
-  title: "Quaint 1 room apartment near the canal",
-  area: "Wedding",
+  title: "Dark 3 room ground floor apartment near the canal",
+  area: "Kreuzberg",
   rent: 400,
-  room: 1,
+  room: 3,
   img_file_names: ['apartment2.jpeg'],
   user_one: {
     email: 'malik@gmail.com',
@@ -38,10 +38,10 @@ apartments = [
   }
   },
   {
-  title: "Penthouse apartment overlooking beautiful Hermannplatz",
-  area: "Pankow",
+  title: "Penthouse apartment overlooking the beautiful and clean Gorlitzerpark",
+  area: "Kreuzberg",
   rent: 800,
-  room: 2,
+  room: 3,
   img_file_names: ['apartment3.jpeg'],
   user_one: {
     email: 'jason@gmail.com',
@@ -49,10 +49,10 @@ apartments = [
   }
   },
   {
-    title: "Sunny apartment in Berlin",
-    area: "mitte",
+    title: "Party palace above KitKat, you'll love it here... trust me",
+    area: "Kreuzberg",
     rent: 900,
-    room: 2,
+    room: 3,
     img_file_names: ['apartment5.jpeg'],
     user_one: {
       email: 'sam@gmail.com',
@@ -61,9 +61,9 @@ apartments = [
     },
   {
   title: "Bright rooms, big kitchen, grass in the backyard",
-  area: "Prenzlauerberg",
-  rent: 3000,
-  room: 5,
+  area: "Kreuzberg",
+  rent: 975,
+  room: 3,
   img_file_names: ['apartment4.jpeg'],
   user_one: {
     email: 'jack@gmail.com',
