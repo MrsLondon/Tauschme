@@ -82,14 +82,14 @@ ActiveRecord::Schema.define(version: 2022_05_31_072348) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.bigint "user1_id"
-    t.bigint "user2_id"
+    t.bigint "user_id", null: false
+    t.bigint "apartment_id", null: false
     t.boolean "liked", default: false
     t.boolean "disliked", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user1_id"], name: "index_statuses_on_user1_id"
-    t.index ["user2_id"], name: "index_statuses_on_user2_id"
+    t.index ["apartment_id"], name: "index_statuses_on_apartment_id"
+    t.index ["user_id"], name: "index_statuses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
