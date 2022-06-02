@@ -1,0 +1,29 @@
+
+
+
+
+
+<% if @apartment.photos.attached?  %>
+  <div id="carouselExampleControls" class="carousel slide w-75 m-auto" data-bs-ride="carousel">
+    <div class="carousel-inner h-100">
+ <div class="carousel-item active h-100">
+      <img class="d-block w-100 h-100" src="<%= cl_image_path @apartment.photos.first.key %>" alt="" style="object-fit: cover;">
+    </div>
+   <% @apartment.photos[1..].each do |photo| %>
+
+    <div class="carousel-item h-100">
+      <img class="d-block w-100 h-100"  src="<%= cl_image_path photo.key %>" alt="" style="object-fit: cover;">
+    </div>
+      <% end %>
+      <% end %>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>

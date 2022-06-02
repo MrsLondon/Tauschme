@@ -5,12 +5,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-trip > img {
-  height: 650px;
-  width: 100%;
-  object-fit: cover;
-}
-
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
@@ -37,4 +31,71 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+.carousel-inner > .item > img {
+  width: 640px;
+  height: 360px;
+}
+
+.carousel-control-next-icon {
+  display: none;
+  color: black;
+}
+
+.carousel-control-prev-icon {
+  display: none;
+}
+
+
+.carousel {
+  height: 100vh;
+  // height: calc(100vh - 90px); // full page height minus height of navbar
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.carousel-inner {
+  transition: transform .5s ease-in-out;
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+.carousel-item {
+  transition: transform 1.5s ease-in-out;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.carousel-card {
+  border-radius: 4px;
+  background: #C4C4C4;
+  padding: 25px;
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  min-width: 200px;
+  width: 60vw;
+  height: 60vh;
+  min-height: 60vh;
+  min-height: fit-content;
+  margin: 0 auto;
+
+  .apartment-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .apartment-picture {
+    width: 50%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

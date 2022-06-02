@@ -9,9 +9,12 @@ require 'open-uri'
 require 'json'
 
 # puts "Cleaning up database..."
-# Filter.destroy_all
-# User.destroy_all
-# Apartment.destroy_all
+Filter.destroy_all
+Status.destroy_all
+Message.destroy_all
+User.destroy_all
+Apartment.destroy_all
+
 # puts "Database cleaned"
 
 apartments = [
@@ -61,10 +64,12 @@ apartments = [
     },
   {
   title: "Bright rooms, big kitchen, grass in the backyard",
+
   area: "Kreuzberg",
-  rent: 975,
-  room: 3,
-  img_file_names: ['apartment4.jpeg'],
+  rent: 1000,
+  room: 5,
+  img_file_names: ['apartment4.jpeg', 'apartment4.1.jpeg', 'apartment4.2.jpeg', 'apartment4.3.jpeg', 'apartment.4.5.jpeg', 'apartment4.6.jpeg', 'apartment4.7.jpeg'],
+
   user_one: {
     email: 'jack@gmail.com',
     password: '123456'
@@ -92,8 +97,8 @@ apartments.each_with_index do |apartment, index|
   seed_apartment.save
 
   puts 'associating apartment and image'
-  apartment[:img_file_names].each do |img_file|
-    seed_apartment.photos.attach(io: File.open("app/assets/images/#{img_file}"), content_type: 'image/jpg', filename: "#{seed_apartment.id}")
+  apartment[:img_file_names].each_with_index do |img_file, ind|
+    seed_apartment.photos.attach(io: File.open("app/assets/images/#{img_file}"), content_type: 'image/jpg', filename: "#{seed_apartment.id}_#{ind}")
   end
 end
 
