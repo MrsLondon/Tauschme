@@ -1,33 +1,22 @@
-<div class="col-lg-6 bg-indigo text-white">
-  <div class="p-5">
-    <h3 class="fw-normal mb-5" style="color: #75bc6f;">The Apartment I'm Looking For</h3>
+<div class='right-side-forms'>
+  <div class='filter-form'>
+    <h3 class="fw-normal mb-5" style="color: #75bc6f;">The Apartment I&#8217;m Looking For</h3>
 
-    <div class="mb-4 pb-2">
-      <div class="form-outline form-white">
-        <%= onboarding_form.text_field "filter[area]", class: "form-control form-control-lg" %>
-        <label class="form-label" for="form3Examplea2" style="color: black;">Area</label>
-      </div>
+    <div class="form-outline form-white">
+      <%= onboarding_form.text_field "filter[area]", class: "form-control form-control-lg" %>
+      <label class="form-label" for="form3Examplea2" style="color: black;">Area</label>
     </div>
 
-    <div class="mb-4 pb-2">
-      <div class="form-outline form-white">
-        <%= onboarding_form.text_field "filter[room]", class: "form-control form-control-lg" %>
-        <label class="form-label" for="form3Examplea3" style="color: black;">Room</label>
-      </div>
+    <div class="form-outline form-white">
+      <%= onboarding_form.text_field "filter[room]", class: "form-control form-control-lg" %>
+      <label class="form-label" for="form3Examplea3" style="color: black;">Room</label>
     </div>
 
-    <div class="row">
-      <div class="col-md-5 mb-4 pb-2">
+    <div class="form-outline form-white">
+      <%= onboarding_form.text_field "filter[rent]", class: "form-control form-control-lg" %>
+      <label class="form-label" for="form3Examplea4" style="color: black;">Rent</label>
+    </div>
 
-        <div class="form-outline form-white">
-          <%= onboarding_form.text_field "filter[rent]", class: "form-control form-control-lg" %>
-          <label class="form-label" for="form3Examplea4" style="color: black;">Rent</label>
-        </div>
-
-      </div>
-
-    <div class="row">
-      <div class="col-md-5 mb-4 pb-2">
     <div class="form-check d-flex justify-content-start mb-4 pb-3" >
       <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
       <label class="form-check-label text-white" for="form2Example3" style="color: black;">
@@ -35,11 +24,7 @@
         site.
       </label>
     </div>
-
-    <button type="submit" class="btn btn-light btn-lg"
-      data-mdb-ripple-color="dark"> Register
- </button>
-
-
   </div>
+
+  <button type="submit" class="btn btn-light btn-lg register-button" data-mdb-ripple-color="dark"> Register </button>
 </div>
