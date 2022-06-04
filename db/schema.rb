@@ -84,16 +84,16 @@ ActiveRecord::Schema.define(version: 2022_06_04_102757) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "apartment_id", null: false
+    t.bigint "user1_id"
+    t.bigint "user2_id"
     t.boolean "liked", default: false
     t.boolean "disliked", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "matched", default: false
     t.boolean "is_ongoing", default: true
-    t.index ["apartment_id"], name: "index_statuses_on_apartment_id"
-    t.index ["user_id"], name: "index_statuses_on_user_id"
+    t.index ["user1_id"], name: "index_statuses_on_user1_id"
+    t.index ["user2_id"], name: "index_statuses_on_user2_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -116,6 +116,6 @@ ActiveRecord::Schema.define(version: 2022_06_04_102757) do
   add_foreign_key "filters", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "statuses", "apartments"
-  add_foreign_key "statuses", "users"
+  add_foreign_key "statuses", "users", column: "user1_id"
+  add_foreign_key "statuses", "users", column: "user2_id"
 end
