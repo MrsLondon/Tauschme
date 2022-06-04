@@ -1,19 +1,18 @@
 class ApartmentsController < ApplicationController
   def index
-    @apartments = Apartment.all.reject { |apartment| apartment.user_id == current_user.id }
-
-    # if current_user.present?
-    #   @filter = current_user.filter
-
-    #   @apartments = [Apartment.last]
-
-    #   @apartments = Apartment.where(area: @filter.area)
-    #   .and(Apartment.where(room: @filter.room))
-    #   .and(Apartment.where(rent: @filter.rent))
-
-    # else
-    #   @apartments = Apartment.all
-    # end
+    if current_user.present?
+      @filter = current_user.filter
+      # filter out current user
+      @apartments = Apartment.where.not(user_id: current_user.id)
+      @apartments = @apartments.where(area: @filter.area)
+      @apartments = @apartments.where(room: @filter.room)
+      @apartments = @apartments.where(rent: 0..@filter.rent)
+      @apartments = @apartments.reject do |apartment|
+        current_user.active_statuses.pluck(:user1_id, :user2_id).flatten.include?(apartment.user_id)
+      end
+    else
+      @apartments = Apartment.all
+    end
   end
 
   def show
