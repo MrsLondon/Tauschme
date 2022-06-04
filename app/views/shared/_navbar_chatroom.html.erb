@@ -1,5 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <div style="width: 12%;"></div>
     <%= link_to root_path, class: "navbar-brand" do %>
     <h1 class="navbar-header"><%= image_tag "favicon3.png" %>TauschMe</h1>
 
@@ -21,11 +22,15 @@
         <% if user_signed_in? %>
         <%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %>
           <li class="nav-item dropdown">
+<<<<<<< HEAD
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
             </div>
           </li>
+=======
+           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+>>>>>>> master
         <%else %>
         <% end %>
       </ul>
