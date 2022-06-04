@@ -1,0 +1,33 @@
+.forms {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+}
+
+.apartment-form, .filter-form {
+  padding: 24px;
+  background: #dad9d9;
+  border-radius: 8px;
+}
+
+.forms > div {
+  width: 40%;
+}
+
+.register-button {
+  border-radius: 8px;
+}
+
+.right-side-forms {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.filter-form {
+  width: 100%;
+}
