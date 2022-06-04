@@ -15,9 +15,9 @@
       <% end %>
     <% end %>
   </div>
-  <div id="chat-column">
-    <h1><%= @chatroom.name_for_user(current_user) %></h1>
 
+  <div id="chat-column">
+    <p><%= @chatroom.name_for_user(current_user) %></p>
 
     <div class="messages"  data-controller="chatroom-subscription">
       <% @chatroom.messages.each do |message| %>
