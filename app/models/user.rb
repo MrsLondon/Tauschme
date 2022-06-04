@@ -7,5 +7,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :apartments, dependent: :destroy
   has_one :filter, dependent: :destroy
-  has_many :statuses
+
+  def statuses
+    Status.where("user1_id = ? OR user2_id = ?", id, id)
+  end
+
+  def matches
+    statuses.where(matched: true)
+  end
+
+  def active_statuses
+    filtered_statuses = statuses.where(is_ongoing: false)
+    filtered_statuses.or(statuses.where(user1_id: id))
+  end
 end

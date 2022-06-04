@@ -5,17 +5,20 @@
 <%= render 'shared/navbar_chatroom' %>
 
 <div class="container chatroom">
-  <h1>#<%= @chatroom.name %></h1>
+  <div id="matches-column"></div>
+  <div id="chat-column">
+    <h1>#<%= @chatroom.name_for_user(current_user) %></h1>
 
-  <div class="messages"  data-controller="chatroom-subscription">
-    <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
+
+    <div class="messages"  data-controller="chatroom-subscription">
+      <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+
+    <%= simple_form_for [@chatroom, @message], remote: true do |f|  %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= f.input :content, label: false, placeholder: "say something in #{@chatroom.name}" %>
     <% end %>
   </div>
-
-  <%= simple_form_for [@chatroom, @message], remote: true do |f|  %>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= f.input :content, label: false, placeholder: "say something in #{@chatroom.name
-  }" %>
-  <% end %>
-  </div>
+</div>

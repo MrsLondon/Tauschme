@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_31_072348) do
+ActiveRecord::Schema.define(version: 2022_06_04_102757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2022_05_31_072348) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "status_id"
+    t.index ["status_id"], name: "index_chatrooms_on_status_id"
   end
 
   create_table "filters", force: :cascade do |t|
@@ -82,14 +84,16 @@ ActiveRecord::Schema.define(version: 2022_05_31_072348) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "apartment_id", null: false
+    t.bigint "user1_id"
+    t.bigint "user2_id"
     t.boolean "liked", default: false
     t.boolean "disliked", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["apartment_id"], name: "index_statuses_on_apartment_id"
-    t.index ["user_id"], name: "index_statuses_on_user_id"
+    t.boolean "matched", default: false
+    t.boolean "is_ongoing", default: true
+    t.index ["user1_id"], name: "index_statuses_on_user1_id"
+    t.index ["user2_id"], name: "index_statuses_on_user2_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -108,11 +112,10 @@ ActiveRecord::Schema.define(version: 2022_05_31_072348) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "apartments", "users"
+  add_foreign_key "chatrooms", "statuses"
   add_foreign_key "filters", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-
   add_foreign_key "statuses", "users", column: "user1_id"
   add_foreign_key "statuses", "users", column: "user2_id"
-
 end
