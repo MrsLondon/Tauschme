@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :statuses, only:[:new, :create]
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
   end
 end
