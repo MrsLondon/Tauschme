@@ -23,7 +23,7 @@ apartments = [
   area: "Kreuzberg",
   rent: 700,
   room: 3,
-  img_file_names: ['apartment1.jpeg', 'apartment1.2.jpeg', 'apartment1.3.jpeg'],
+  img_file_names: ['apartment1.jpeg', 'apartment1.1.jpeg', 'apartment1.2.jpeg', 'apartment1.3.jpeg'],
   user_one: {
     email: 'emma@gmail.com',
     password: '123456'
@@ -34,7 +34,7 @@ apartments = [
   area: "Kreuzberg",
   rent: 400,
   room: 3,
-  img_file_names: ['apartment2.jpeg'],
+  img_file_names: ['apartment2.jpeg', 'apartment2.2.jpeg', 'apartment2.3.jpeg'],
   user_one: {
     email: 'malik@gmail.com',
     password: '123456'
@@ -45,7 +45,7 @@ apartments = [
   area: "Kreuzberg",
   rent: 800,
   room: 3,
-  img_file_names: ['apartment3.jpeg'],
+  img_file_names: ['apartment3.jpeg', 'apartment3.1.jpeg', 'apartment3.2.jpeg', 'apartment3.3.jpeg','apartment3.4.jpeg' ,'apartment3.5.jpeg', 'apartment3.6.jpeg'],
   user_one: {
     email: 'jason@gmail.com',
     password: '123456'
@@ -56,7 +56,7 @@ apartments = [
     area: "Kreuzberg",
     rent: 900,
     room: 3,
-    img_file_names: ['apartment5.jpeg'],
+    img_file_names: ['apartment5.jpeg', 'apartment5.1.jpeg', 'apartment5.2.jpeg', 'apartment5.3.jpeg', 'apartment5.4.jpeg'],
     user_one: {
       email: 'sam@gmail.com',
       password: '123456'
