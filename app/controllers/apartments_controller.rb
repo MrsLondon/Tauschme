@@ -2,6 +2,7 @@ class ApartmentsController < ApplicationController
   def index
     if current_user.present?
       @filter = current_user.filter
+      return redirect_to(onboarding_path, notice: "You need to add your apartment first") if @filter.nil?
       # filter out current user
       @apartments = Apartment.where.not(user_id: current_user.id)
       @apartments = @apartments.where(area: @filter.area)
