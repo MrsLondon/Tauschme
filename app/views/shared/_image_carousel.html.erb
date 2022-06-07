@@ -1,18 +1,15 @@
-
-
-
-
-
 <% if @apartment.photos.attached?  %>
   <div id="carouselExampleControls" class="carousel slide w-75 m-auto" data-bs-ride="carousel">
-    <div class="carousel-inner h-100">
+    <div class="carousel-inner h-100 position-relative">
+    <%= link_to "x", apartments_path, style: "position: absolute; top: 4px; right: 6px; z-index: 100; text-decoration: none;", data: {turbolinks: false}%>
+
  <div class="carousel-item active h-100">
       <img class="d-block w-100 h-100" src="<%= cl_image_path @apartment.photos.first.key %>" alt="" style="object-fit: cover;">
     </div>
    <% @apartment.photos[1..].each do |photo| %>
 
     <div class="carousel-item h-100">
-      <img class="d-block w-100 h-100"  src="<%= cl_image_path photo.key %>" alt="" style="object-fit: cover;">
+    <img class="d-block w-100 h-100"  src="<%= cl_image_path photo.key %>" alt="" style="object-fit: cover;">
     </div>
       <% end %>
       <% end %>
