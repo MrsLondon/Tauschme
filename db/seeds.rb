@@ -64,7 +64,6 @@ apartments = [
     },
   {
   title: "Bright rooms, big kitchen, grass in the backyard",
-
   area: "Kreuzberg",
   rent: 1000,
   room: 3,
@@ -73,7 +72,51 @@ apartments = [
     email: 'jack@gmail.com',
     password: '123456'
   }
+  },
+  {
+  title: "Cosy studio flat, perfect for students",
+  area: "Mitte",
+  rent: 500,
+  room: 1,
+  img_file_names: ['apartment6.1.webp', 'apartment6.2.webp', 'apartment6.3.webp'],
+  user_one: {
+    email: 'dina@gmail.com',
+    password: '123456'
   }
+  },
+  {
+  title: "Bright apartment, perfect for couples",
+  area: "Mitte",
+  rent: 700,
+  room: 1,
+  img_file_names: ['apartment7.webp', 'apartment7.1.webp', 'apartment7.2.webp', 'apartment7.3.webp'],
+  user_one: {
+    email: 'mai@gmail.com',
+    password: '123456'
+  }
+  },
+  {
+  title: "Modern apartment near Potsdamer Platz",
+  area: "Mitte",
+  rent: 900,
+  room: 1,
+  img_file_names: ['apartment8.webp', 'apartment8.1.webp', 'apartment8.3.webp', 'apartment8.2.webp', 'apartment8.4.webp', 'apartment8.5.webp', 'apartment8.6.webp', 'potsdamer.jpeg'],
+  user_one: {
+    email: 'roy@gmail.com',
+    password: '123456'
+  }
+  },
+  {
+    title: "Ground floor apartment in mitte",
+    area: "Mitte",
+    rent: 600,
+    room: 1,
+    img_file_names: ['apartment9.webp', 'apartment9.1.webp', 'apartment9.3.webp', 'apartment9.2.webp', 'apartment9.4.webp', 'apartment9.5.webp', 'apartment9.6.webp'],
+    user_one: {
+      email: 'alex@gmail.com',
+      password: '123456'
+    }
+    }
 ]
 
 apartments.each_with_index do |apartment, index|
