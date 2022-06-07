@@ -11,7 +11,7 @@
     <br>
     <div class="flex-item">
     <% if user_signed_in? %>
-      <%= link_to "Apartments", apartments_path, class: "btn btn-flat" %>
+      <%= link_to "Onboarding", onboarding_path, class: "btn btn-flat" %>
       <% else %>
       <%= link_to "Join", new_user_registration_path, class: "btn btn-flat" %>
       <%= link_to "Sign in", new_user_session_url, class: "btn btn-ghost" %>
