@@ -12,12 +12,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-
+          <li class="nav-item active">
+            <%= link_to "Back", :back, class: "nav-link"%>
+          </li>
           <li class="nav-item active">
             <%= link_to "Home", root_path , class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Matches", chatroom_path , class: "nav-link" %>
           </li>
         <% if user_signed_in? %>
         <%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %>
