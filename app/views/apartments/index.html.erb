@@ -1,7 +1,3 @@
-<head>
-  <title>TauschME</title>
-  <link rel="icon" type="image/x-icon" href="/images/T4.jpg">
-</head>
 <%= render 'shared/navbar_index' %>
 
 
@@ -23,9 +19,9 @@
               <p><%= apartment.description %></p>
             </div>
             <div>
-              <p><%= apartment.area %></p>
-              <p>Rooms: <%= apartment.room %></p>
-              <p><%= apartment.rent %>€ / month</p>
+              <p><i class="fa-solid fa-location-dot icon-ad"></i><%= apartment.area %></p>
+              <p><i class="fa-solid fa-house icon-ad-house"></i></i>Rooms: <%= apartment.room %></p>
+              <p><i class="fa-solid fa-euro-sign icon-ad"></i><%= apartment.rent %>/ month</p>
             </div>
           </div>
           <div class="apartment-picture">

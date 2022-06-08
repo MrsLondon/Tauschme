@@ -1,5 +1,5 @@
 <div class='apartment-form'>
-  <h3 class="fw-normal mb-5" style="color: #75bc6f;">The Apartment I Want To Exchange</h3>
+  <h3 class="fw-normal mb-5 text-center" style="color: #A1BE97;">The Apartment I Want To Exchange</h3>
 
   <div class="form-outline form-white">
     <label class="form-label" style="color: #000000;" for="form3Examplea2">Title</label>
@@ -7,29 +7,29 @@
   </div>
 
   <div class="form-outline form-white">
-    <label class="form-label" style="color: #000000;" for="form3Examplea2">Kiez</label>
+    <label class="form-label not-top-label" style="color: #000000;" for="form3Examplea2">Kiez</label>
     <%= onboarding_form.text_field "apartment[area]", class: "form-control form-control-lg" %>
   </div>
 
 
   <div class="form-outline form-white">
-    <label class="form-label" style="color: #000000;" for="form3Examplea3">Rooms</label>
+    <label class="form-label not-top-label" style="color: #000000;" for="form3Examplea3">Rooms</label>
     <%= onboarding_form.text_field "apartment[room]", class: "form-control form-control-lg" %>
   </div>
 
   <div class="form-outline form-white">
-    <label class="form-label" for="form3Examplea4">Photo(s)</label>
+    <label class="form-label not-top-label" for="form3Examplea4">Photo(s)</label>
     <%= onboarding_form.file_field "apartment[photos]", multiple: true, class: "form-control form-control-lg"  %>
   </div>
 
 
   <div class="form-outline form-white">
-    <label class="form-label" style="color: #000000;" for="form3Examplea4">Rent</label>
+    <label class="form-label not-top-label" style="color: #000000;" for="form3Examplea4">Rent</label>
     <%= onboarding_form.text_field "apartment[rent]", class: "form-control form-control-lg" %>
   </div>
 
   <div class="form-outline form-white">
-    <label class="form-label" style="color: #000000;" for="form3Examplea5">Description</label>
+    <label class="form-label not-top-label" style="color: #000000;" for="form3Examplea5">Description</label>
     <%= onboarding_form.text_area "apartment[description]", class: "form-control form-control-lg" %>
   </div>
 
