@@ -1,6 +1,6 @@
 class Chatroom < ApplicationRecord
   has_many :messages
-  belongs_to :status
+  belongs_to :status, dependent: :destroy
 
   def name_for_user(current_user)
     apartment_for_user(current_user).title

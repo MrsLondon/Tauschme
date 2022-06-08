@@ -1,11 +1,12 @@
-<head>
-  <title>TauschME</title>
-  <link rel="icon" type="image/x-icon" href="/images/T4.jpg">
-</head>
 <%= render 'shared/navbar_chatroom' %>
 
 <div class="container chatroom">
+
   <div id="matches-column">
+  <% if @matches.empty? %>
+    <p>You have no matches yet</p>
+  <% end %>
+
     <% @matches.each do |status| %>
       <%= link_to status.chatroom do  %>
         <div class="<%= "active" if status.chatroom == @chatroom %>">
@@ -26,10 +27,8 @@
 
       <%= simple_form_for [@chatroom, @message], remote: true do |f|  %>
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <%= f.input :content, label: false, placeholder: "say something in #{@chatroom.name}" %>
+        <%= f.input :content, label: false, placeholder: "Tausch your apartment! #{@chatroom.name}" %>
       <% end %>
     </div>
   </div>
 </div>
-
-<%= link_to "Back", :back %>

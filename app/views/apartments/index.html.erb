@@ -1,13 +1,9 @@
-<head>
-  <title>TauschME</title>
-  <link rel="icon" type="image/x-icon" href="/images/T4.jpg">
-</head>
 <%= render 'shared/navbar_index' %>
 
 
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-  <div class="carousel-inner">
+  <div class="carousel-inner index-card">
   <% if @apartments.empty? %>
     <p>You have seen all available apartments</p>
   <% end %>
