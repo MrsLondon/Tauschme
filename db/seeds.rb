@@ -22,7 +22,7 @@ apartments = [
   title: "Sunny apartment in Berlin",
   area: "Kreuzberg",
   rent: 700,
-  room: 3,
+  room: 15,
   img_file_names: ['apartment1.jpeg', 'apartment1.1.jpeg', 'apartment1.2.jpeg', 'apartment1.3.jpeg'],
   user_one: {
     email: 'emma@gmail.com',
@@ -33,7 +33,7 @@ apartments = [
   title: "Dark 3 room ground floor apartment near the canal",
   area: "Kreuzberg",
   rent: 400,
-  room: 3,
+  room: 8,
   img_file_names: ['apartment2.jpeg', 'apartment2.2.jpeg', 'apartment2.3.jpeg'],
   user_one: {
     email: 'malik@gmail.com',
@@ -55,7 +55,7 @@ apartments = [
     title: "Party palace above KitKat, you'll love it here... trust me",
     area: "Kreuzberg",
     rent: 900,
-    room: 3,
+    room: 10,
     img_file_names: ['apartment5.jpeg', 'apartment5.1.jpeg', 'apartment5.2.jpeg', 'apartment5.3.jpeg', 'apartment5.4.jpeg'],
     user_one: {
       email: 'sam@gmail.com',
@@ -66,7 +66,7 @@ apartments = [
   title: "Bright rooms, big kitchen, grass in the backyard",
   area: "Kreuzberg",
   rent: 1000,
-  room: 3,
+  room: 5,
   img_file_names: ['apartment4.jpeg', 'apartment4.1.jpeg', 'apartment4.2.jpeg', 'apartment4.3.jpeg', 'apartment4.5.jpeg', 'apartment4.6.jpeg', 'apartment4.7.jpeg'],
   user_one: {
     email: 'jack@gmail.com',
