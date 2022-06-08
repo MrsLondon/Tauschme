@@ -18,65 +18,123 @@ Apartment.destroy_all
 # puts "Database cleaned"
 
 apartments = [
+  #Kreuzberg apartments for demo
   {
-  title: "Sunny apartment in Berlin",
+  title: "Large 8 room apartment fit for a big family",
   area: "Kreuzberg",
-  rent: 700,
-  room: 15,
-  img_file_names: ['apartment1.jpeg', 'apartment1.1.jpeg', 'apartment1.2.jpeg', 'apartment1.3.jpeg'],
-  user_one: {
-    email: 'emma@gmail.com',
-    password: '123456'
-  }
-  },
-  {
-  title: "Dark 3 room ground floor apartment near the canal",
-  area: "Kreuzberg",
-  rent: 400,
+  rent: 450,
   room: 8,
-  img_file_names: ['apartment2.jpeg', 'apartment2.2.jpeg', 'apartment2.3.jpeg'],
-  user_one: {
-    email: 'malik@gmail.com',
-    password: '123456'
-  }
-  },
-  {
-  title: "Penthouse apartment overlooking the beautiful and clean Gorlitzerpark",
-  area: "Kreuzberg",
-  rent: 800,
-  room: 3,
-  img_file_names: ['apartment3.jpeg', 'apartment3.1.jpeg', 'apartment3.2.jpeg', 'apartment3.3.jpeg','apartment3.4.jpeg' ,'apartment3.5.jpeg', 'apartment3.6.jpeg'],
-  user_one: {
-    email: 'jason@gmail.com',
-    password: '123456'
-  }
-  },
-  {
-    title: "Party palace above KitKat, you'll love it here... trust me",
-    area: "Kreuzberg",
-    rent: 900,
-    room: 10,
-    img_file_names: ['apartment5.jpeg', 'apartment5.1.jpeg', 'apartment5.2.jpeg', 'apartment5.3.jpeg', 'apartment5.4.jpeg'],
+  img_file_names: ['apartment1.jpeg', 'apartment1.1.jpeg', 'apartment1.2.jpeg', 'apartment1.3.jpeg'],
     user_one: {
-      email: 'sam@gmail.com',
-      password: '123456'
+    email: 'ayat@gmail.com',
+    password: '123456'
     }
+  },
+  {
+  title: "I've lived here for 13 years without a rent increase. Tausch with me please!!!!",
+  area: "Kreuzberg",
+  rent: 340,
+  room: 5,
+  img_file_names: ['apartment2.jpeg', 'apartment2.2.jpeg', 'apartment2.3.jpeg'],
+    user_one: {
+    email: 'coffeeluva@gmail.com',
+    password: '123456'
+    }
+  },
+  {
+  title: "This place honestly gets 0 dust. ZERO. It's amazing, you never have to clean. Ground floor, no windows.",
+  area: "Kreuzberg",
+  rent: 230,
+  room: 4,
+  img_file_names: ['apartment3.jpeg', 'apartment3.1.jpeg', 'apartment3.2.jpeg', 'apartment3.3.jpeg','apartment3.4.jpeg' ,'apartment3.5.jpeg', 'apartment3.6.jpeg'],
+    user_one: {
+    email: 'dude@gmail.com',
+    password: '123456'
+    }
+  },
+  {
+  title: "Quiet neighbours. Babies not allowed... soz.",
+  area: "Kreuzberg",
+  rent: 421,
+  room: 4,
+  img_file_names: ['apartment4.jpeg', 'apartment4.1.jpeg', 'apartment4.2.jpeg', 'apartment4.3.jpeg', 'apartment4.5.jpeg', 'apartment4.6.jpeg', 'apartment4.7.jpeg'],
+    user_one: {
+    email: 'sorrynotsorry@gmail.com',
+    password: '123456'
+    }
+  },
+  {
+    title: "Just got dumped, need a new place. Help a girl out... bitte.",
+    area: "Kreuzberg",
+    rent: 230,
+    room: 4,
+    img_file_names: ['apartment5.jpeg', 'apartment5.1.jpeg', 'apartment5.2.jpeg', 'apartment5.3.jpeg', 'apartment5.4.jpeg'],
+      user_one: {
+      email: 'justgotdumped@gmail.com',
+      password: '123456'
+      }
     },
   {
-  title: "Bright rooms, big kitchen, grass in the backyard",
-  area: "Kreuzberg",
-  rent: 1000,
-  room: 5,
-  img_file_names: ['apartment4.jpeg', 'apartment4.1.jpeg', 'apartment4.2.jpeg', 'apartment4.3.jpeg', 'apartment4.5.jpeg', 'apartment4.6.jpeg', 'apartment4.7.jpeg'],
-  user_one: {
-    email: 'jack@gmail.com',
-    password: '123456'
-  }
-  },
+    title: "Sunny apartment in Berlin",
+    area: "Kreuzberg",
+    rent: 280,
+    room: 15,
+    img_file_names: ['apartment6.1.jpeg', 'apartment6.2.jpeg', 'apartment6.3.jpeg'],
+      user_one: {
+      email: 'emma@gmail.com',
+      password: '123456'
+      }
+    },
+    {
+    title: "Dark 3 room ground floor apartment near the canal",
+    area: "Kreuzberg",
+    rent: 400,
+    room: 8,
+    img_file_names: ['apartment7.jpeg', 'apartment7.1.jpeg', 'apartment7.3.jpeg'],
+      user_one: {
+      email: 'malik@gmail.com',
+      password: '123456'
+      }
+    },
+    {
+    title: "Penthouse apartment overlooking the beautiful and clean Gorlitzerpark",
+    area: "Kreuzberg",
+    rent: 333,
+    room: 3,
+    img_file_names: ['apartment8.jpeg', 'apartment8.1.jpeg', 'apartment8.2.jpeg'],
+      user_one: {
+      email: 'jason@gmail.com',
+      password: '123456'
+      }
+    },
+    {
+      title: "Party palace above KitKat, you'll love it here... trust me",
+      area: "Kreuzberg",
+      rent: 450,
+      room: 10,
+      img_file_names: ['apartment9.jpeg'],
+        user_one: {
+        email: 'sam@gmail.com',
+        password: '123456'
+      }
+      },
+    {
+    title: "Bright rooms, big kitchen, grass in the backyard",
+    area: "Kreuzberg",
+    rent: 500,
+    room: 5,
+    img_file_names: ['apartment10.jpeg', 'apartment10.1.jpeg', 'apartment10.2.jpeg'],
+      user_one: {
+      email: 'jack@gmail.com',
+      password: '123456'
+      }
+    },
+
+  #Mitte apartments (depending on demo type)
   {
   title: "Cosy studio flat, perfect for students",
   area: "Mitte",
-  rent: 500,
+  rent: 209,
   room: 1,
   img_file_names: ['apartment6.1.webp', 'apartment6.2.webp', 'apartment6.3.webp'],
   user_one: {
@@ -87,7 +145,7 @@ apartments = [
   {
   title: "Bright apartment, perfect for couples",
   area: "Mitte",
-  rent: 700,
+  rent: 344,
   room: 1,
   img_file_names: ['apartment7.webp', 'apartment7.1.webp', 'apartment7.2.webp', 'apartment7.3.webp'],
   user_one: {
@@ -98,7 +156,7 @@ apartments = [
   {
   title: "Modern apartment near Potsdamer Platz",
   area: "Mitte",
-  rent: 900,
+  rent: 212,
   room: 1,
   img_file_names: ['apartment8.webp', 'apartment8.1.webp', 'apartment8.3.webp', 'apartment8.2.webp', 'apartment8.4.webp', 'apartment8.5.webp', 'apartment8.6.webp', 'potsdamer.jpeg'],
   user_one: {
@@ -107,9 +165,9 @@ apartments = [
   }
   },
   {
-    title: "Ground floor apartment in mitte",
+    title: "Ground floor apartment in Mitte",
     area: "Mitte",
-    rent: 600,
+    rent: 50,
     room: 1,
     img_file_names: ['apartment9.webp', 'apartment9.1.webp', 'apartment9.3.webp', 'apartment9.2.webp', 'apartment9.4.webp', 'apartment9.5.webp', 'apartment9.6.webp'],
     user_one: {
@@ -143,51 +201,3 @@ apartments.each_with_index do |apartment, index|
     seed_apartment.photos.attach(io: File.open("app/assets/images/#{img_file}"), content_type: 'image/jpg', filename: "#{seed_apartment.id}_#{ind}")
   end
 end
-
-
-
-# apartment_descriptions = [
-#   "Sunny apartment in Kreuzberg with balcony!",
-#   "Quaint 1 room apartment near the canal",
-#   "Penthouse apartment overlooking beautiful Hermannplatz",
-#   "Bright rooms, big kitchen, grass in the backyard",
-#   "You'll love eating burgers in this stunning apartment"
-# ]
-
-# # apartment_area = ["Neukolln", "Kreuzberg", "Mitte", "Wedding", "Pankow"]
-
-# apartment_title = [300, 400, 500, 100, 600]
-
-# apartment_title = ["Sunny apartment in Berlin", "Altbau", "Neubau", "Groovy Apartment", "Your new home", "Make me your new home", "My wife left me, please exchange!!", "No more kids at home, need to downsize", "My dog needs a backyar"]
-
-# # apartment_room = [3, 3, 3, 3, 3]
-
-# file = URI.open("https://images.unsplash.com/photo-1550609531-57c783bb03e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
-
-#   puts 'creating users'
-#   user = User.new(
-#     email: "email@email.com",
-#     password: "123456"
-#   )
-#   user.save!
-
-#   user_two = User.new(
-#     email: "usertwo@email.com",
-#     password: "123456"
-#   )
-#   user_two.save!
-
-#   5.times do
-#   puts 'creating apartments'
-#   apartment = Apartment.new(
-#     description: apartment_descriptions.sample,
-#     area: "Kreuzberg",
-#     rent: apartment_rent.sample,
-#     title: apartment_title.sample,
-#     room: 3
-#   )
-
-#   apartment.user = User.all.sample
-#   apartment.photos.attach(io: file, filename: file, content_type: "image/jpg")
-#   apartment.save!
-#   end
