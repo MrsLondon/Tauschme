@@ -6,7 +6,7 @@ class ApartmentsController < ApplicationController
       # filter out current user
       @apartments = Apartment.where.not(user_id: current_user.id)
       @apartments = @apartments.where(area: @filter.area)
-      @apartments = @apartments.where(room: @filter.room)
+      @apartments = @apartments.where(room: @filter.room..20)
       @apartments = @apartments.where(rent: 0..@filter.rent)
       @apartments = @apartments.reject do |apartment|
         current_user.active_statuses.pluck(:user1_id, :user2_id).flatten.include?(apartment.user_id)
