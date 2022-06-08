@@ -10,7 +10,7 @@
     <% @matches.each do |status| %>
       <%= link_to status.chatroom do  %>
         <div class="<%= "active" if status.chatroom == @chatroom %>">
-          <%= cl_image_tag status.chatroom.thumbnail_for_user(current_user), width: 100 %>
+          <%= cl_image_tag status.chatroom.thumbnail_for_user(current_user), width: 100, class:'new-card-img-top'  %>
           <p><%= status.chatroom.name_for_user(current_user) %></p>
         </div>
       <% end %>
