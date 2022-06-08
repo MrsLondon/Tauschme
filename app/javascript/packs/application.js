@@ -14,3 +14,11 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+require("turbolinks").start()
+
+// ...
+
+// Remember to call your functions here
+document.addEventListener('turbolinks:load', () => {
+});
