@@ -1,7 +1,7 @@
 @import "apartments/show";
 
 .carousel {
-  height: 100vh;
+  height: 90vh;
   // height: calc(100vh - 90px); // full page height minus height of navbar
   width: 100vw;
   display: flex;
@@ -10,8 +10,6 @@
 }
 .carousel-inner {
   transition: transform .5s ease-in-out;
-  &:hover {
-  }
 }
 .carousel-item {
   transition: transform 1.5s ease-in-out;
