@@ -24,7 +24,7 @@ apartments = [
   area: "Kreuzberg",
   rent: 450,
   room: 8,
-  img_file_names: ['apartment1.jpeg', 'apartment1.1.jpeg', 'apartment1.2.jpeg', 'apartment1.3.jpeg'],
+  img_file_names: ['apartment1.png', 'apartment1.1.jpeg', 'apartment1.2.jpeg', 'apartment1.3.jpeg'],
     user_one: {
     email: 'ayat@gmail.com',
     password: '123456'
