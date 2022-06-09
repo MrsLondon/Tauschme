@@ -5,7 +5,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
   <div class="carousel-inner index-card">
   <% if @apartments.empty? %>
-    <p>You have seen all available apartments</p>
+    <p class="text-center">You have seen all available apartments</p>
   <% end %>
     <% @apartments.each_with_index do |apartment, index| %>
      <div class="carousel-item <%= "active" if apartment == @apartments.first %>">
@@ -15,8 +15,8 @@
           <div class="apartment-info">
             <div>
 
-              <h1><%= apartment.title %></h1>
-              <p><%= apartment.description %></p>
+              <p class="card-title"><%= apartment.title %></p>
+              <%# <p><%= apartment.description %></p>
             </div>
             <div>
               <p><i class="fa-solid fa-location-dot icon-ad"></i><%= apartment.area %></p>
@@ -38,15 +38,15 @@
 
         <% end %>
         <div class="likebutton">
-          <button id="dislike"  type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <button id="dislike" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
           <%= button_to statuses_path(user: apartment.user, status: "disliked"), method: :post, id: "dislike" do %>
-          <i class="fa-solid fa-circle-xmark fa-3x"></i>
+          <i class="fa-solid fa-circle-xmark fa-4x buttoncolor"></i>
           <% end %>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button id="like"  type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button id="like" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
           <%= button_to statuses_path(user: apartment.user, status: "liked"), method: :post, id: "like" do %>
-          <i class="fa-solid fa-circle-check fa-3x"></i>
+          <i class="fa-solid fa-circle-check fa-4x buttoncolor"></i>
           <% end %>
           <span class="visually-hidden">Next</span>
         </button>
