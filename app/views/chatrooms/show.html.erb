@@ -1,5 +1,43 @@
 <%= render 'shared/navbar_chatroom' %>
 
+<div class="container chatroom"
+  data-controller="chatroom-subscription"
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>
+
+  <div id="matches-column">
+  <% if @matches.empty? %>
+    <p>You have no matches yet</p>
+  <% end %>
+
+    <% @matches.each do |status| %>
+      <%= link_to status.chatroom do  %>
+        <div class="<%= "active" if status.chatroom == @chatroom %>">
+          <%= cl_image_tag status.chatroom.thumbnail_for_user(current_user), width: 100, class:'new-card-img-top'  %>
+          <p><%= status.chatroom.name_for_user(current_user) %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="chat-column">
+    <p><%= @chatroom.name_for_user(current_user) %></p>
+
+    <div class="messages"  data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+
+      <%= simple_form_for [@chatroom, @message], remote: true do |f|  %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= f.input :content, label: false, placeholder: "Tausch your apartment! #{@chatroom.name}" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+=begin
+<%= render 'shared/navbar_chatroom' %>
+
 <div class="container chatroom">
 
   <div id="matches-column">
@@ -31,4 +69,5 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> 
+=end
