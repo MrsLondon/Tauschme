@@ -1,10 +1,13 @@
-
-<%= render 'shared/navbar' %>
+<% if user_signed_in? %>
+<%= render 'shared/navbar_loggedin' %>
+      <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2760&q=80);">
   <div class="structure" class="box">
     <h1>Trade your apartment, not your sanity</h1>
-    <p class="text-center">Moving is difficult, so join a vibrant community of privledged old-lease holders <br> and tausch your apartment today</p>
+    <p class="text-center">Moving is difficult, so join a vibrant community of priviledged old-lease holders <br> and tausch your apartment today</p>
     <div class="flex-item">
     <% if user_signed_in? %>
       <%= link_to "Tausch Your Apartment", onboarding_path, class: "btn btn-flat" %>
@@ -51,7 +54,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Tausch Me
+            <i class="fas fa-gem me-3"></i>TauschMe
           </h6>
           <p>
             TauschMe is an online platform providing tauschwohnung services to residents of Berlin.
