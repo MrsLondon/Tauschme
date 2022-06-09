@@ -51,12 +51,16 @@
 .likebutton {
   display: flex;
   justify-content: center;
-  transform: translate(0px, -29px);
+  transform: translate(0px, -40px);
 }
 
 #like, #dislike {
   background-color: transparent;
   border: none;
+}
+
+#like {
+  padding-left: 1rem;
 }
 
 .icon-ad {
@@ -74,4 +78,19 @@
 
 .index-card {
   transform: scale(1.03);
+}
+
+.card-title {
+  font-size: 20px;
+  padding: 1rem;
+  text-align: left;
+  word-break: break-word;
+}
+
+.buttoncolor {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.buttoncolor:hover {
+  color: rgba(0, 0, 0, 0.7);
 }
