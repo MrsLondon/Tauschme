@@ -1,5 +1,5 @@
 meta_product_name: "TauschMe"
 meta_title: "TauschMe - Trade your apartment, not your sanity"
 meta_description: "TauschMe is an online platform providing tauschwohnung services to residents of Berlin."
-meta_image: "apartment1.jpeg" # should exist in `app/assets/images/`
+meta_image: "apartment1.png" # should exist in `app/assets/images/`
 twitter_account: "@tauschmeberlin"   # required for Twitter Cards
