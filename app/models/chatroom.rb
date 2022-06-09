@@ -1,5 +1,5 @@
 class Chatroom < ApplicationRecord
-  has_many :messages
+  has_many :messages, dependent: :destroy
   belongs_to :status, dependent: :destroy
 
   def name_for_user(current_user)
@@ -8,6 +8,10 @@ class Chatroom < ApplicationRecord
 
   def thumbnail_for_user(current_user)
     apartment_for_user(current_user).photos.first.key
+  end
+
+  def has_thumbnail_for_user?(current_user)
+    apartment_for_user(current_user).photos.present?
   end
 
   private

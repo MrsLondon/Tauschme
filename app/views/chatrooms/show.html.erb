@@ -3,14 +3,17 @@
 <div class="container chatroom">
 
   <div id="matches-column">
+   <h3 class="matches-text">My Matches</h3>
   <% if @matches.empty? %>
     <p>You have no matches yet</p>
   <% end %>
 
     <% @matches.each do |status| %>
-      <%= link_to status.chatroom do  %>
-        <div class="<%= "active" if status.chatroom == @chatroom %>">
-          <%= cl_image_tag status.chatroom.thumbnail_for_user(current_user), width: 100, class:'new-card-img-top'  %>
+      <%= link_to status.chatroom, class: "match-card-link" do  %>
+        <div class="match-card <%= "active-match-card" if status.chatroom == @chatroom %>">
+          <% if status.chatroom.has_thumbnail_for_user?(current_user) %>
+           <%= cl_image_tag status.chatroom.thumbnail_for_user(current_user)  %>
+           <% end %>
           <p><%= status.chatroom.name_for_user(current_user) %></p>
         </div>
       <% end %>
@@ -18,12 +21,15 @@
   </div>
 
   <div id="chat-column">
-    <p><%= @chatroom.name_for_user(current_user) %></p>
+     <h3 class="matches-text">Chat</h3>
+
 
     <div class="messages"  data-controller="chatroom-subscription">
+     <div class="messages-list">
       <% @chatroom.messages.each do |message| %>
         <%= render "messages/message", message: message %>
       <% end %>
+      </div>
 
       <%= simple_form_for [@chatroom, @message], remote: true do |f|  %>
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
