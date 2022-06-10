@@ -18,14 +18,13 @@
   </div>
 
   <div class="form-outline form-white">
-    <label class="form-label not-top-label" for="form3Examplea4">Photo(s)</label>
-    <%= onboarding_form.file_field "apartment[photos]", multiple: true, class: "form-control form-control-lg"  %>
-  </div>
-
-
-  <div class="form-outline form-white">
     <label class="form-label not-top-label" style="color: #000000;" for="form3Examplea4">Rent</label>
     <%= onboarding_form.text_field "apartment[rent]", class: "form-control form-control-lg" %>
+  </div>
+
+    <div class="form-outline form-white">
+    <label class="form-label not-top-label" for="form3Examplea4">Photo(s)</label>
+    <%= onboarding_form.file_field "apartment[photos]", multiple: true, class: "form-control form-control-lg"  %>
   </div>
 
   <div class="form-outline form-white">
